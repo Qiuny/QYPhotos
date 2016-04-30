@@ -14,6 +14,9 @@
 		520B04F71CD1A9FE008A1817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520B04F51CD1A9FE008A1817 /* LaunchScreen.storyboard */; };
 		520B05021CD1A9FE008A1817 /* QYPhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B05011CD1A9FE008A1817 /* QYPhotosTests.swift */; };
 		520B050D1CD1A9FE008A1817 /* QYPhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B050C1CD1A9FE008A1817 /* QYPhotosUITests.swift */; };
+		52B21B051CD4A20700E95FD3 /* QYPhotos.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52B21B021CD4A20700E95FD3 /* QYPhotos.bundle */; };
+		52B21B061CD4A20700E95FD3 /* QYPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B21B031CD4A20700E95FD3 /* QYPhotos.swift */; };
+		52B21B071CD4A20700E95FD3 /* QYPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B21B041CD4A20700E95FD3 /* QYPhotosCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		520B05081CD1A9FE008A1817 /* QYPhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QYPhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520B050C1CD1A9FE008A1817 /* QYPhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYPhotosUITests.swift; sourceTree = "<group>"; };
 		520B050E1CD1A9FE008A1817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B21B021CD4A20700E95FD3 /* QYPhotos.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QYPhotos.bundle; sourceTree = "<group>"; };
+		52B21B031CD4A20700E95FD3 /* QYPhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QYPhotos.swift; sourceTree = "<group>"; };
+		52B21B041CD4A20700E95FD3 /* QYPhotosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QYPhotosCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		520B04EB1CD1A9FE008A1817 /* QYPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				52B21B011CD4A20700E95FD3 /* QYPhotos */,
 				520B04EC1CD1A9FE008A1817 /* AppDelegate.swift */,
 				520B04EE1CD1A9FE008A1817 /* ViewController.swift */,
 				520B04F01CD1A9FE008A1817 /* Main.storyboard */,
@@ -123,6 +130,16 @@
 				520B050E1CD1A9FE008A1817 /* Info.plist */,
 			);
 			path = QYPhotosUITests;
+			sourceTree = "<group>";
+		};
+		52B21B011CD4A20700E95FD3 /* QYPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				52B21B021CD4A20700E95FD3 /* QYPhotos.bundle */,
+				52B21B031CD4A20700E95FD3 /* QYPhotos.swift */,
+				52B21B041CD4A20700E95FD3 /* QYPhotosCell.swift */,
+			);
+			path = QYPhotos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +248,7 @@
 			files = (
 				520B04F71CD1A9FE008A1817 /* LaunchScreen.storyboard in Resources */,
 				520B04F41CD1A9FE008A1817 /* Assets.xcassets in Resources */,
+				52B21B051CD4A20700E95FD3 /* QYPhotos.bundle in Resources */,
 				520B04F21CD1A9FE008A1817 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B21B071CD4A20700E95FD3 /* QYPhotosCell.swift in Sources */,
 				520B04EF1CD1A9FE008A1817 /* ViewController.swift in Sources */,
+				52B21B061CD4A20700E95FD3 /* QYPhotos.swift in Sources */,
 				520B04ED1CD1A9FE008A1817 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QYPhotos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qiuny.QYPhotos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QYPhotos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Qiuny.QYPhotos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,6 +504,7 @@
 				520B05131CD1A9FE008A1817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		520B05141CD1A9FE008A1817 /* Build configuration list for PBXNativeTarget "QYPhotosTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +513,7 @@
 				520B05161CD1A9FE008A1817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		520B05171CD1A9FE008A1817 /* Build configuration list for PBXNativeTarget "QYPhotosUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +522,7 @@
 				520B05191CD1A9FE008A1817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
