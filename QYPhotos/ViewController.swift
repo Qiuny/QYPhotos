@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private let screenHeight = UIScreen.mainScreen().bounds.height
     
     var scroll: UIScrollView!
+    var imagesInScroll = [UIImageView]()
     
     var photos: QYPhotos!
     
@@ -41,14 +42,15 @@ class ViewController: UIViewController {
     }
     
     func prepareForLayout() {
-        scroll = UIScrollView(frame: CGRectMake(0, 0, screenWidth, screenHeight - 64))
+        scroll = UIScrollView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
         scroll.contentSize = CGSizeMake(scroll.frame.width, scroll.frame.height + 1)
+        scroll.showsVerticalScrollIndicator = false
         scroll.backgroundColor = UIColor.clearColor()
         self.view.addSubview(scroll)
+//        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func selectPhotos() {
-        print("show photos")
         photos.showPhotos(self)
     }
 
@@ -62,24 +64,26 @@ class ViewController: UIViewController {
 extension ViewController: QYPhotosDelegate {
     
     func selectedPhotos(photos: [UIImage]) {
-        for vie in scroll.subviews {
+        print(photos.count)
+        for vie in imagesInScroll {
             vie.removeFromSuperview()
         }
-        print(photos.count)
         if photos.count > 0 {
             for i in 0...photos.count - 1 {
                 if i == 0 {
                     let imageView = UIImageView(frame: CGRectMake(0, 0, screenWidth, screenWidth*(photos[i].size.height/photos[i].size.width)))
                     imageView.image = photos[i]
+                    imagesInScroll.append(imageView)
                     scroll.addSubview(imageView)
                 }
                 else {
-                    
+                    let imageView = UIImageView(frame: CGRectMake(0, imagesInScroll[i - 1].frame.origin.y + imagesInScroll[i - 1].frame.height + 10, screenWidth, screenWidth*(photos[i].size.height/photos[i].size.width)))
+                    imageView.image = photos[i]
+                    imagesInScroll.append(imageView)
+                    scroll.addSubview(imageView)
                 }
             }
-        }
-        else {
-            
+            scroll.contentSize.height = imagesInScroll.last!.frame.origin.y + imagesInScroll.last!.frame.height > scroll.frame.height ? imagesInScroll.last!.frame.origin.y + imagesInScroll.last!.frame.height : scroll.frame.height + 1
         }
     }
     

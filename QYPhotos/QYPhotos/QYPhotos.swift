@@ -85,6 +85,7 @@ class QYPhotos: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         self.view.addSubview(collectionView)
+        currentNumberOfSelected = 0
     }
     
     //MARK: -事件方法
