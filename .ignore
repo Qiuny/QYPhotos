@@ -1,4 +1,1 @@
- in 0...photos.count - 1 {
-            if i == 0 {
-                let imageView = UIImageView(frame: CGRectMake(0, 0, screenWidth, screenWidth*(photos[i].size.height/photos[i].size.widh)))
-      
+ 
